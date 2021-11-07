@@ -36,8 +36,10 @@ int knipser_investigation::On_Parameters_Enable(CSG_Parameters *pParameters, CSG
 
 bool knipser_investigation::On_Execute(void)
 {
-	CSG_Shapes	*pInputLines 	= Parameters("INPUT")->asShapes();
-	CSG_Shapes	*pOutputLines 	= Parameters("OUTPUT")->asShapes();
+	CSG_Shapes	*input_ptr 	= Parameters("INPUT")->asShapes();
+	CSG_Shapes	*output_ptr = Parameters("OUTPUT")->asShapes();
+
+	
 
 	return true;
 }
