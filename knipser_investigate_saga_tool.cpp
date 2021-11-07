@@ -2,7 +2,7 @@
 
 knipser_investigation::knipser_investigation(void)
 {
-	Set_Name (_TL("Create Profile Lines"));
+	Set_Name (_TL("Investigation Tool"));
 	
 	Set_Author(_TL("\u00a9 Justus Spitzmüller"));
 	
@@ -21,7 +21,7 @@ knipser_investigation::knipser_investigation(void)
 
 	Parameters.Add_Shapes(
 		NULL , "OUTPUT" , _TL("Output Polygon") , _TL("Output Polygon Shapefile") , 
-		PARAMETER_OUTPUT , SHAPE_TYPE_Line
+		PARAMETER_OUTPUT , SHAPE_TYPE_Polygon
 	);
 
 }
@@ -38,6 +38,8 @@ bool knipser_investigation::On_Execute(void)
 {
 	CSG_Shapes	*input_ptr 	= Parameters("INPUT")->asShapes();
 	CSG_Shapes	*output_ptr = Parameters("OUTPUT")->asShapes();
+
+	SG_Polygon_Union( input_ptr->Get_Shape(0), input_ptr->Get_Shape(1), output_ptr->Add_Shape() );
 
 	
 

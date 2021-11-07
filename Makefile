@@ -5,11 +5,11 @@
 #                                                         #
 #                        Makefile                         #
 #                                                         #
-#                 Copyright (C) 2020 BGR                  #
+#          Copyright (C) 2020 Justus Spitzmüller          #
 #                                                         #
 ###########################################################
 
-LIB_NAME           = libbok.so
+LIB_NAME           = libsagaklipper.so
 
 SAGA_ROOT          = /usr
 
