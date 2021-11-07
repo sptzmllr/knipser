@@ -8,6 +8,9 @@
 # Compiled Object files
 *.o
 
+# Cmpiled Executables
+*.out
+
 # VisualStudio Database
 *.db
 *.opendb
