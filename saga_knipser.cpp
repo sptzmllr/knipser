@@ -1,3 +1,4 @@
+#include "knipser.h"
 class saga_knipser
 {
 public:
@@ -86,4 +87,31 @@ bool saga_knipser::convert( CSG_Shapes *polygon_ptr, knipser::paths &clipper )
 		}
 	}
 	return ( clipper.size() > 0 )
+}
+
+typedef shared_ptr<lgnds::layer::shape> = shape_ptr;
+
+bool knipser_clipper_( knipser::clip_type operation, shape_ptr polygon, shape_ptr clip, shape_ptr result )
+{
+	lgnds::rect r( polygon->extent() );
+	r.merge( clip->extent() );
+
+	saga_knipser	converter(r);
+
+	knipser::paths	polygon_path;
+	knipser::paths	clip_path;
+	knipser::paths	result_path;
+
+	if( converter.convert( polygon, polygon_path)
+	&&	converter.convert( polygon, polygon_path) )
+	{
+		knipser::clipper Clipper;
+	}
+}
+
+
+
+bool knipser_clipper_( knipser::clip_type operation, CSG_Shape *pPolygon, CSG_Shape *pClip, CSG_Shape *pResult)
+{
+	CSG_Rect	rect
 }
